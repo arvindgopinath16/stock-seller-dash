@@ -2,8 +2,8 @@ services:
   - type: web
     name: stock-seller-dash
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: chmod +x build.sh && ./build.sh
     startCommand: gunicorn StockSeller_Dash:server --bind 0.0.0.0:$PORT
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10.12
+        value: 3.9.18
